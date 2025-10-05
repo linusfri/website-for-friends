@@ -34,31 +34,31 @@ $webroot_dir = $root_dir . '/web';
  * Use Dotenv to set required environment variables and load .env file in root
  * .env.local will override .env if it exists
  */
+
+$env_files = file_exists($root_dir . '/.env.local')
+    ? ['.env', '.env.local']
+    : ['.env'];
+
+$repository = Dotenv\Repository\RepositoryBuilder::createWithNoAdapters()
+    ->addAdapter(Dotenv\Repository\Adapter\EnvConstAdapter::class)
+    ->addAdapter(Dotenv\Repository\Adapter\PutenvAdapter::class)
+    ->immutable()
+    ->make();
+
+$dotenv = Dotenv\Dotenv::create($repository, $root_dir, $env_files, false);
 if (file_exists($root_dir . '/.env')) {
-    $env_files = file_exists($root_dir . '/.env.local')
-        ? ['.env', '.env.local']
-        : ['.env'];
-
-    $repository = Dotenv\Repository\RepositoryBuilder::createWithNoAdapters()
-        ->addAdapter(Dotenv\Repository\Adapter\EnvConstAdapter::class)
-        ->addAdapter(Dotenv\Repository\Adapter\PutenvAdapter::class)
-        ->immutable()
-        ->make();
-
-    $dotenv = Dotenv\Dotenv::create($repository, $root_dir, $env_files, false);
-    if (file_exists($root_dir . '/.env')) {
-        $dotenv->load();
-        $dotenv->required(['WP_HOME', 'WP_SITEURL']);
-        if (!env('DATABASE_URL')) {
-            $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD']);
-        }
-    } else if (env('ENV_FILE_PATH')) {
-        $dotenv = Dotenv\Dotenv::createUnsafeImmutable(env('ENV_FILE_PATH'), ['.env'], false);
-        $dotenv->load();
-
-        $dotenv->required(['WP_HOME', 'WP_SITEURL']);
+    $dotenv->load();
+    $dotenv->required(['WP_HOME', 'WP_SITEURL']);
+    if (!env('DATABASE_URL')) {
+        $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD']);
     }
+} else if (env('ENV_FILE_PATH')) {
+    $dotenv = Dotenv\Dotenv::createUnsafeImmutable(env('ENV_FILE_PATH'), ['.env'], false);
+    $dotenv->load();
+
+    $dotenv->required(['WP_HOME', 'WP_SITEURL']);
 }
+
 
 /**
  * Set up our global environment constant and load its config first
