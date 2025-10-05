@@ -32,7 +32,7 @@ in
       enable = true;
       inherit php;
       domains = [ "${name}.local" ];
-      serveDir = "/web";
+      serveDir = "web";
       appType = "wordpress";
       # assetFallbackUrl = "https://www.${name}.se";
     };

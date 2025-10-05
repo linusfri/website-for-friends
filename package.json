@@ -1,0 +1,10 @@
+{
+  "name": "bedrock-base",
+  "version": "1.0.0",
+  "description": "Basic wordpress project.",
+  "scripts": {
+    "build-theme": "CD TO THEME && npm install && npm run build",
+    "build": "npm run build-theme",
+    "postinstall": "npm run build"
+  }
+}

@@ -74,10 +74,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1759681839,
+        "lastModified": 1759685633,
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "88ce27c0819f0f0d26117074abb269b6ee9b6a59",
+        "rev": "7da65cc29dccab20c109573c9c2bc1ab9d7df9be",
         "type": "github"
       },
       "original": {
@@ -101,10 +101,10 @@
     "templates": {
       "flake": false,
       "locked": {
-        "lastModified": 1759685167,
+        "lastModified": 1759686679,
         "owner": "linusfri",
         "repo": "templates",
-        "rev": "7351466225b57bcae6a5570400aef0c00c453ebc",
+        "rev": "9cab25fdeab869ace82a1d552abe445863964db1",
         "type": "github"
       },
       "original": {
