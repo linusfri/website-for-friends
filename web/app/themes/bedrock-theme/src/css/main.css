@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-900 leading-relaxed;
+  }
+
+  a {
+    @apply text-accent transition-colors duration-300;
+  }
+
+  a:hover {
+    @apply text-accent/80;
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+@layer components {
+  /* Header */
+  header {
+    @apply bg-primary text-white py-4;
+  }
+
+  header h1 a {
+    @apply text-white text-2xl font-bold;
+  }
+
+  header h1 a:hover {
+    @apply text-white opacity-90;
+  }
+
+  header p {
+    @apply text-gray-300 text-sm;
+  }
+
+  header nav ul {
+    @apply flex gap-6 flex-wrap mt-4;
+  }
+
+  header nav a {
+    @apply text-white py-2;
+  }
+
+  header nav a:hover {
+    @apply text-white underline;
+  }
+
+  /* Container */
+  .container {
+    @apply max-w-7xl mx-auto px-5;
+  }
+
+  /* Main Content */
+  main {
+    @apply py-8 min-h-[60vh];
+  }
+
+  /* Articles */
+  article {
+    @apply mb-12;
+  }
+
+  article h1 {
+    @apply text-4xl font-bold mb-2 leading-tight;
+  }
+
+  article h2 {
+    @apply text-3xl font-bold mb-2 leading-tight;
+  }
+
+  article h2 a {
+    @apply text-gray-900;
+  }
+
+  article h2 a:hover {
+    @apply text-accent;
+  }
+
+  .entry-meta {
+    @apply text-secondary text-sm mb-4;
+  }
+
+  .entry-content {
+    @apply my-4;
+  }
+
+  .entry-content p {
+    @apply mb-4;
+  }
+
+  .entry-content h1,
+  .entry-content h2,
+  .entry-content h3,
+  .entry-content h4,
+  .entry-content h5,
+  .entry-content h6 {
+    @apply mt-6 mb-2 font-bold;
+  }
+
+  .entry-content h1 { @apply text-3xl; }
+  .entry-content h2 { @apply text-2xl; }
+  .entry-content h3 { @apply text-xl; }
+  .entry-content h4 { @apply text-lg; }
+
+  .entry-content ul,
+  .entry-content ol {
+    @apply ml-6 mb-4;
+  }
+
+  .entry-content ul {
+    @apply list-disc;
+  }
+
+  .entry-content ol {
+    @apply list-decimal;
+  }
+
+  .entry-content img {
+    @apply block my-4;
+  }
+
+  .post-thumbnail {
+    @apply my-4;
+  }
+
+  .read-more {
+    @apply inline-block px-4 py-2 bg-accent text-white rounded transition-colors duration-300;
+  }
+
+  .read-more:hover {
+    @apply bg-accent/80 text-white;
+  }
+
+  /* Pagination */
+  .pagination {
+    @apply my-8;
+  }
+
+  .pagination .nav-links {
+    @apply flex justify-center gap-2 flex-wrap;
+  }
+
+  .pagination a,
+  .pagination span {
+    @apply px-4 py-2 bg-gray-100 rounded;
+  }
+
+  .pagination .current {
+    @apply bg-accent text-white;
+  }
+
+  /* Post Navigation */
+  .post-navigation {
+    @apply flex justify-between gap-4 my-8;
+  }
+
+  .post-navigation a {
+    @apply px-4 py-2 bg-gray-100 rounded transition-colors duration-300;
+  }
+
+  .post-navigation a:hover {
+    @apply bg-gray-200;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    @apply mt-8;
+  }
+
+  .widget {
+    @apply mb-8 p-4 bg-gray-100 rounded-lg;
+  }
+
+  .widget-title {
+    @apply mb-4 text-xl font-bold;
+  }
+
+  .widget ul {
+    @apply space-y-1;
+  }
+
+  /* Footer */
+  footer {
+    @apply bg-primary text-white text-center py-8 mt-12;
+  }
+
+  .footer-menu {
+    @apply flex justify-center gap-4 mt-4;
+  }
+
+  .footer-menu a {
+    @apply text-white;
+  }
+
+  .footer-menu a:hover {
+    @apply text-white opacity-80;
+  }
+
+  /* Responsive Grid */
+  @media (min-width: 768px) {
+    main {
+      @apply grid grid-cols-[2fr_1fr] gap-8;
+    }
+
+    .sidebar {
+      @apply mt-0;
+    }
+  }
+}

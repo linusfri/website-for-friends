@@ -3,8 +3,27 @@
   "version": "1.0.0",
   "description": "Basic wordpress project.",
   "scripts": {
-    "build-theme": "CD TO THEME && npm install && npm run build",
-    "build": "npm run build-theme",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "build-theme": "[[ ! -d web/app/themes/custom ]] && exit 0 || cd web/app/themes/custom && npm install && npm run build",
     "postinstall": "npm run build"
+  },
+  "dependencies": {
+    "webpack": "^5.102.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.4.49",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.16",
+    "terser-webpack-plugin": "^5.3.11"
   }
 }
