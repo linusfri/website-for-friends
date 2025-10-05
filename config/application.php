@@ -46,11 +46,17 @@ if (file_exists($root_dir . '/.env')) {
         ->make();
 
     $dotenv = Dotenv\Dotenv::create($repository, $root_dir, $env_files, false);
-    $dotenv->load();
+    if (file_exists($root_dir . '/.env')) {
+        $dotenv->load();
+        $dotenv->required(['WP_HOME', 'WP_SITEURL']);
+        if (!env('DATABASE_URL')) {
+            $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD']);
+        }
+    } else if (env('ENV_FILE_PATH')) {
+        $dotenv = Dotenv\Dotenv::createUnsafeImmutable(env('ENV_FILE_PATH'), ['.env'], false);
+        $dotenv->load();
 
-    $dotenv->required(['WP_HOME', 'WP_SITEURL']);
-    if (!env('DATABASE_URL')) {
-        $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD']);
+        $dotenv->required(['WP_HOME', 'WP_SITEURL']);
     }
 }
 
