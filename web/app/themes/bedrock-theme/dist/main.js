@@ -1,1 +1,0 @@
-(()=>{"use strict";document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".menu-toggle"),t=document.querySelector(".primary-menu");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("active")})})})();
