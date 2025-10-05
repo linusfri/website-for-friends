@@ -9,6 +9,7 @@ web/app/uploads/*
 web/app/cache/*
 
 web/app/themes/bedrock-theme/dist
+node_modules
 
 # WordPress
 web/wp
