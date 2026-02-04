@@ -8,7 +8,7 @@
 }:
 
 let
-  php = pkgs.php83;
+  php = pkgs.php84;
 
   nodeBuild = pkgs.buildNpmPackage {
     version = "1.0.0";
