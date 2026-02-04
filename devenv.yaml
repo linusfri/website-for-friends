@@ -1,6 +1,6 @@
 inputs:
   nixpkgs:
-    url: github:NixOS/nixpkgs/release-25.05
+    url: github:NixOS/nixpkgs/release-25.11
   templates:
     url: github:linusfri/templates
     flake: false
