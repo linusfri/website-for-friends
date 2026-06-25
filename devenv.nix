@@ -6,11 +6,11 @@
   ...
 }:
 let
-  php = pkgs.php83;
+  php = pkgs.php84;
 
   devDeps = {
     inherit php;
-    inherit (pkgs) wp-cli nodejs_22;
+    inherit (pkgs) wp-cli nodejs_24;
     inherit (php.packages) composer;
   };
 
