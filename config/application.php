@@ -135,6 +135,9 @@ Config::define('DISALLOW_FILE_EDIT', env('DISALLOW_FILE_EDIT') === 'true');
 // Disable plugin and theme updates and installation from the admin
 Config::define('DISALLOW_FILE_MODS', env('DISALLOW_FILE_MODS') === 'true');
 
+// Allow WordPress to directly write to the filesystem
+define('FS_METHOD', 'direct');
+
 // Limit the number of post revisions
 Config::define('WP_POST_REVISIONS', env('WP_POST_REVISIONS') ?? true);
 
