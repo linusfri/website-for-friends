@@ -29,7 +29,6 @@ let
   composerBuild = php.buildComposerProject {
     pname = "bedrock-wp"; # Project name.
     version = "1.0.0"; # Version of the project.
-    nativeBuildInputs = with pkgs; [ rsync ]; # Native build inputs.
     src = ./.;
     __noChroot = false; # Allow or disallow build-step to operate outside sandbox
     composerStrictValidation = false; # Disable strict validation for Composer.
@@ -52,7 +51,7 @@ let
     # Run `nix build` and wait for the error
     # In the error response you'll se Nix complain about hash mismatch
     # Copy the "Got" has and paste below and run `nix build` again
-    vendorHash = "sha256-e4ch4HOl/fqysyF8x6xTPzs+Pv/RuQ1XPqD1fsY+m8c="; # Hash for Composer vendor directory.
+    vendorHash = "sha256-uFCuFbxipJLWQJIa42okLZKGy8N2thoKU7jwmZ+XX1E="; # Hash for Composer vendor directory.
   };
 in
 composerBuild
