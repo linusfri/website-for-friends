@@ -160,6 +160,16 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
     $_SERVER['HTTPS'] = 'on';
 }
 
+/**
+ * Redis Object Cache Configuration
+ */
+Config::define('WP_REDIS_SCHEME', env('WP_REDIS_SCHEME') ?: 'tcp');
+Config::define('WP_REDIS_HOST', env('WP_REDIS_HOST') ?: '127.0.0.1');
+Config::define('WP_REDIS_PORT', (int) (env('WP_REDIS_PORT') ?? 6379));
+Config::define('WP_REDIS_PATH', env('WP_REDIS_PATH') ?: null);
+Config::define('WP_REDIS_DISABLE_DROPIN_CHECK', env('WP_REDIS_DISABLE_DROPIN_CHECK') === 'true');
+Config::define('WP_REDIS_DISABLE_DROPIN_AUTOUPDATE', env('WP_REDIS_DISABLE_DROPIN_AUTOUPDATE') === 'true');
+
 $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
 
 if (file_exists($env_config)) {
