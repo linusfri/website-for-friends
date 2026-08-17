@@ -51,7 +51,7 @@ let
     # Run `nix build` and wait for the error
     # In the error response you'll se Nix complain about hash mismatch
     # Copy the "Got" has and paste below and run `nix build` again
-    vendorHash = "sha256-uFCuFbxipJLWQJIa42okLZKGy8N2thoKU7jwmZ+XX1E="; # Hash for Composer vendor directory.
+    vendorHash = "sha256-0LZdWwEPIIshe2YWCkTrUf1TxcXsn+W5sWF44tNfQyc="; # Hash for Composer vendor directory.
   };
 in
 composerBuild
